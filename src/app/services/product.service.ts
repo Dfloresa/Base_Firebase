@@ -14,7 +14,7 @@ export class ProductService {
 
   constructor(private firebase : AngularFireDatabase) { }
 
-  getProduct(){
+  getProducts(){
 
     return this.productList = this.firebase.list('products');
   }
@@ -23,7 +23,7 @@ export class ProductService {
 
     this.productList.push({
 
-      Nombre: product.Nomobre,
+      Nombre: product.Nombre,
       Categoria: product.Categoria,
       Local: product.Local,
       Precio: product.Precio
@@ -33,17 +33,17 @@ export class ProductService {
 
   updateProduct(product: Product){
 
-    this.productList.update(product.Id, {
-      Nombre: product.Nomobre,
+    this.productList.update(product.$key, {
+      Nombre: product.Nombre,
       Categoria: product.Categoria,
       Local: product.Local,
       Precio: product.Precio
     });
   }
 
-  deelteProduct(product: Product){
+  delteProduct($key: string){
 
-    this.productList.remove(product.Id);
+    this.productList.remove($key);
   }
 
 

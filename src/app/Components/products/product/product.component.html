@@ -1,14 +1,17 @@
-<div class="card">
+<div class="card mt-5">
     <div class="card-body">
-        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm) ">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)"> 
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key" >
+            
+
             <div class="form-group">
                 <input 
                 type="text"
                 class="form-control"
                 name="Nombre"
                 #Nombre= "ngModel"
-                [(ngModel)]="productService.selectedProduct.name"
-                placeholder="Ingrese nombre de producto">
+                [(ngModel)]="productService.selectedProduct.Nombre"
+                placeholder="Nombre de producto">
             </div>
 
             <div class="form-group">
@@ -18,18 +21,41 @@
                     name="Categoria"
                     #Categoria= "ngModel"
                     [(ngModel)]="productService.selectedProduct.Categoria"
-                    placeholder="Ingrese Categoria">
+                    placeholder="Categoria">
                 </div>
 
             <div class="form-group">
                     <input 
                     type="text"
                     class="form-control"
-                    name="Nombre"
-                    #Nombre= "ngModel"
-                    [(ngModel)]="productService.selectedProduct.name"
-                    placeholder="Ingrese nombre de producto">
-                </div>    
+                    name="Local"
+                    #Local= "ngModel"
+                    [(ngModel)]="productService.selectedProduct.Local"
+                    placeholder="Localización del producto">
+                </div>  
+               
+            <div class="form-group">
+                    <input 
+                    type=""
+                    class="form-control"
+                    name="Precio"
+                    #Precio= "ngModel"
+                    [(ngModel)]="productService.selectedProduct.Precio"
+                    placeholder="Precio">
+                </div>  
+                
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit">
+                                Agregar
+                    </button>
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                                Reset
+                    </button>
+                </div>
+
         </form>
     </div>
 </div>

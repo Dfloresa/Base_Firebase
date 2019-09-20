@@ -1,1 +1,22 @@
-<p>product-list works!</p>
+<div class="caard">
+    <div class="card-body">
+        <h6 class="text-center">Lista de productos</h6>
+        <table class="table table.sm table-hover">
+            <tbody>
+                <tr *ngFor="let product of productList">
+                    <td>{{product.Nombre}} </td>
+                    <td>{{product.Categoria}}</td>
+                    <td>
+                        <button class="btn btn-primary text-white" (click)="onEdit(product)">
+                            Editar
+                        </button>
+                        <button class="btn btn-danger text-white" (click)="onDelete(product.$key)">
+                                Eliminar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
