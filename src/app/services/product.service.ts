@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { from } from 'rxjs';
 import { Product } from '../models/product';
- 
+import { ProductComponent } from '../Components/products/product/product.component';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +45,5 @@ export class ProductService {
 
     this.productList.remove($key);
   }
-
 
 }

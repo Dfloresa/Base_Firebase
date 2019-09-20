@@ -30,7 +30,6 @@ export class ProductComponent implements OnInit {
   this.resetForm(productForm);
   }
 
-
   resetForm(productForm?: NgForm){
 
     if(productForm != null)
